@@ -1,0 +1,98 @@
+PyX Guidelines
+
+Licensed under the MIT License
+Written by Franco M.
+
+============================================================================================
+
+Section 0: The filesystem
+
+All PyX compliant systems must have a root directory(/), a sys(/sys) directory in the root(/)
+directory, a user(/user) directory in the root(/) directory, and a credits.txt file in the
+root(/) directory. In the sys(/sys) directory there must be a bin(/sys/bin) directory, a
+rescue(/sys/rescue) directory and a syslog.txt file in the sys(/sys) directory. In the
+user(/user) directory there must be a bin(/user/bin) directory in the user(/user) directory
+and a write(/user/write) directory in the user(/user) directory.
+
+In the sysbin(/sys/bin) directory, the following packages are to be stored:
+
+- npim
+- cat
+- ls
+- pwd
+- cd
+- help
+- whoami
+- touch
+
+In the sysrescue(/sys/rescue) directory, the following packages are to be stored:
+
+- pyboot
+- pyfs
+- exit
+- rm
+
+In the userbin(/user/bin) directory, the following packages are to be stored:
+
+- pyfetch
+
+The userwrite(/user/write) directory is to be stored in two lists, one named
+'userwrite' with the following value: [] and another list named 'usercont' with the
+following value: []. When a user adds a text file, you are to add it's filename to
+the userwrite list, and its contents are to be added to the usercont list.
+
+To navigate the filesystem, the user is to use the 'cd' command. The 'cd' command is to
+support entering full directory paths, and it is to support entering sub-directories
+without specifying the full path, as shown in exibit A:
+
+Exibit A:
+
+location: /user
+contents: /bin /write
+
+user: cd bin
+
+location: /user/bin
+
+The 'cd' command is also to support going back up one directory path using the 'cd ..'
+command as shown in exibit B:
+
+Exibit B:
+
+location: /user/bin
+
+user: cd ..
+
+location: /user
+
+To create a file the user must be in the userwrite(/user/write) directory and can create
+a file with the 'touch <filename>' command or using 'npim <filename>' command. To remove
+a file, the user must be in the userwrite(/user/write) directory and can use the
+'rm <filename>' command. To read the contents of a file, the user does not need to be in
+the userwrite(/user/write), they can use the 'cat <filename>' command.
+
+Section 1: The kernel
+
+All PyX compliant systems must use PyKern as its' kernel, and must use MemSafe as it's
+memory managment system. All PyX  compliant systems must also support booting into the kernel
+with the 'exit' command. PyX systems are to NEVER change the functionality of PyKern unless
+it is to integrate a filesystem.
+
+Section 2: External configuration
+
+All PyX compliant systems are to pull the following vaules from an external configuration
+file:
+
+- username
+- hostname
+- boot message
+
+These values are to be stored in the following variables in the configuration file:
+
+username: username
+hostname: hname
+bootmessage: bmess
+
+============================================================================================
+
+Last updates September 02 2024 @ 10:31 AM EST
