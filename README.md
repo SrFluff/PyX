@@ -1,3 +1,4 @@
+![Logo](Logo.svg)
 # PyX
 
 The spiritual successor to **PyLinux**. With file reading & writing, built-in text editor and unix-like commands, this baby's the least bloated its been in ever.
