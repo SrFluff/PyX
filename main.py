@@ -23,7 +23,7 @@ else:
                                                                # Initial message
 
 print('Type "help" for help')
-print('PyLinux version 1.0.0')
+print('PyX version 1.0.0')
 print()
 
                                                                # Main loop
