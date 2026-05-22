@@ -5,7 +5,7 @@ import kernel
 import std
 
 kernel.UID = 1
-VERSION = "1.0.0"
+VERSION = "1.0.1"
 print(f"PSH v{VERSION}")
 print(f"Kernel: {kernel.NAME} v{kernel.VERSION}")
 
